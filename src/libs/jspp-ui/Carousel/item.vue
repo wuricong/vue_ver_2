@@ -3,11 +3,9 @@
     <slot></slot>
   </div>
 </template>
-
 <script>
-
 export default {
-  name: 'Carousel',
+  name: 'CarouselItem',
   data() {
     return {}
   }

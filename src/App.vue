@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <carousel  />
+    <img alt="Vue logo" src="./assets/logo.png"/>
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <carousel>
+      <carousel-item>
+        组件插槽
+      </carousel-item>
+    </carousel>
   </div>
 </template>
 
