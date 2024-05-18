@@ -1,34 +1,31 @@
 import Vue from 'vue'
+import AsyncDialog from '@/components/async-dialog/index.vue'
+import asyncDialog from "@/components/async-dialog/index.vue";
 
 /**
- * @params c:传入的组件
+ * @params c:传入的无状态组件
  * */
-export default function createAsyncDialog(c, t) {
-    console.log('c', c, t)
-    new Promise((resolve, reject) => {
-        new Vue({
-            render: function (createElement) {
-                console.log('createElement', createElement)
-                const VNode = createElement(c, {
-                    props: {
-                        visible: true
-                    },
-                    on: {
-                        success(e) {
-                            console.log('成功', e)
-                            c.props.visible = false
-                            resolve()
-                        },
-                        close(e) {
-                            c.props.visible = false
-                            resolve()
-                        }
-                    }
-                })
-                console.log('VNode', VNode)
-                return VNode
-            },
-        }).$mount()
+export default function createAsyncDialog(c) {
+  return new Promise((resolve, reject) => {
+    const newInstance = Vue.extend(c)
+    const com = new newInstance()
+    const vm = new Vue({
+      render: (h) => h(AsyncDialog, {
+        on: {
+          save() {
+            resolve(11)
+          },
+          close() {
+            console.log('close')
+            reject()
+          }
+        }
+      }),
     })
-
+    document.body.appendChild(vm.$mount().$el)
+    vm.$nextTick(() => {
+      const el = vm.$el.querySelector('.el-dialog__body')
+      el.appendChild(com.$mount().$el)
+    })
+  })
 }
