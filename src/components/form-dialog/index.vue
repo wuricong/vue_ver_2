@@ -24,6 +24,9 @@ export default {
       show: false
     }
   },
+  created() {
+    console.log('this', this)
+  },
   watch: {
     show(val) {
       if (!val) {

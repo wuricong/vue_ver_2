@@ -8,20 +8,28 @@ export default function createAsyncDialog(c) {
   return new Promise((resolve, reject) => {
     const newInstance = Vue.extend(c)
     const com = new newInstance()
+
+    function handleDialog(vm, state) {
+      const {$children} = vm
+      $children[0][state]()
+    }
+
     const vm = new Vue({
       render: (h) => h(AsyncDialog, {
         on: {
           save() {
-            resolve(11)
+            handleDialog(vm, 'close')
+            resolve()
           },
           close() {
-            console.log('close')
+            handleDialog(vm, 'close')
             reject()
           }
         }
       }),
     })
     document.body.appendChild(vm.$mount().$el)
+    handleDialog(vm, 'open')
     vm.$nextTick(() => {
       const el = vm.$el.querySelector('.el-dialog__body')
       el.appendChild(com.$mount().$el)

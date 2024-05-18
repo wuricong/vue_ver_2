@@ -34,8 +34,13 @@ export default {
   },
   methods: {
     async handleAsyncDialog() {
-      const res = await createAsyncDialog(HelloWorld)
-      console.log('AsyncDialog', AsyncDialog)
+      try {
+        const res = await createAsyncDialog(HelloWorld)
+        console.log('AsyncDialog', AsyncDialog)
+      } catch (e) {
+        console.log('e', e)
+      }
+
     },
     handleFormDialog() {
       this.formVisible = true

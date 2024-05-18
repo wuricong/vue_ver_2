@@ -10,17 +10,23 @@
 export default {
   data() {
     return {
-      visible: true
+      visible: false
     }
   },
   methods: {
-    handleSave() {
+    close() {
       this.visible = false
+      setTimeout(() => {
+        document.body.removeChild(this.$el)
+      }, 500)
+    },
+    open() {
+      this.visible = true
+    },
+    handleSave() {
       this.$emit('save')
     },
     handleClose() {
-      this.visible = false
-      document.body.removeChild(this.$el)
       this.$emit('close')
     }
   }
