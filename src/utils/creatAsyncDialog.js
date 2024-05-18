@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import AsyncDialog from '@/components/async-dialog/index.vue'
-import asyncDialog from "@/components/async-dialog/index.vue";
 
 /**
  * @params c:传入的无状态组件
