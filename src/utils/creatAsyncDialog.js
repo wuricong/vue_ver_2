@@ -17,7 +17,7 @@ export default function createAsyncDialog(c) {
     const vm = new Vue({
       render: (h) => h(AsyncDialog, {
         on: {
-          save() {
+          save: () => {
             handleDialog(vm, 'close')
             resolve()
           },
