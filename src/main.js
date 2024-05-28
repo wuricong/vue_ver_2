@@ -7,7 +7,7 @@ import JsppUI from '@/libs/jspp-ui'
 import './components' //组件全局注册
 
 Vue.config.productionTip = false //关闭开发模式下的环境提示
-
+console.log('1111', process.env.BASE_URL, process.env)
 Vue.use(JsppUI)
 Vue.use(ElementUI)
 new Vue({
