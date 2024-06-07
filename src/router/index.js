@@ -4,6 +4,6 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 
-const routes = []
+export const routes = [{path: '/router', name: '路由'}]
 
-const router = new VueRouter({routes})
+export default new VueRouter({routes})

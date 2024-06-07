@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ApolloExample msg="Welcome to Your Vue.js App"/>
     <carousel>
       <carousel-item>
         组件插槽
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ApolloExample from './components/ApolloExample.vue'
 import AsyncDialog from "@/components/async-dialog/index.vue";
 import createAsyncDialog from "@/utils/creatAsyncDialog";
 import formDialog from '@/components/form-dialog/index.vue'
@@ -29,13 +29,13 @@ export default {
     }
   },
   components: {
-    HelloWorld,
+    ApolloExample,
     formDialog,
   },
   methods: {
     async handleAsyncDialog() {
       try {
-        const res = await createAsyncDialog(HelloWorld)
+        const res = await createAsyncDialog(ApolloExample)
         console.log('AsyncDialog', AsyncDialog)
       } catch (e) {
         console.log('e', e)
