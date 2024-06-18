@@ -16,6 +16,10 @@ export default {
     visible: {
       type: Boolean,
       default: false
+    },
+    value: {
+      type: [Boolean, String],
+      default: undefined
     }
   },
   data() {
@@ -25,7 +29,7 @@ export default {
     }
   },
   created() {
-    console.log('this', this)
+    console.log('this', this, this.value,)
   },
   watch: {
     show(val) {
