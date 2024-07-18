@@ -14,7 +14,7 @@ module.exports = defineConfig({
     plugins: [
       new BundleAnalyzer({
         analyzerMode: process.env.VUE_APP_STAGE === 'LOCAL' ? 'disabled' : 'server', // 本地环境不启用
-        openAnalyzer: true, // 是否自动打开报告页面
+        openAnalyzer: false, // 是否自动打开报告页面
         analyzerPort: 9999 // 报告页面端口
       })
     ]

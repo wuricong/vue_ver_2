@@ -15,6 +15,7 @@
       <div>111</div>
     </anchored-heading>
     <EventBus/>
+    <JsxTest/>
   </div>
 </template>
 
@@ -25,6 +26,7 @@ import createAsyncDialog from "@/utils/creatAsyncDialog";
 import formDialog from '@/components/form-dialog/index.vue'
 import customCheck from "@/components/custom-check/index.vue";
 import EventBus from "@/view/event-bus/index.vue";
+import JsxTest from "@/view/jsx-test/index.vue";
 
 export default {
   name: 'App',
@@ -38,7 +40,8 @@ export default {
   components: {
     formDialog,
     customCheck,
-    EventBus
+    EventBus,
+    JsxTest
   },
   methods: {
     async handleAsyncDialog() {

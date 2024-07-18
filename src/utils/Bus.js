@@ -4,7 +4,9 @@ class Bus {
   }
 
   $on(name, fn) {
-    this.callbacks[name] = this.callbacks[name] || []
+    if (!this.callbacks[name]) {
+      this.callbacks[name] = []
+    }
     this.callbacks[name].push(fn)
   }
 
@@ -14,6 +16,14 @@ class Bus {
         cb(args)
       })
     }
+  }
+
+  $remove(name) {
+    Object.keys(this.callbacks).forEach(key => {
+      if (key === name) {
+        delete this.callbacks[name]
+      }
+    })
   }
 }
 

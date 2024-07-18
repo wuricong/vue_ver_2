@@ -2,6 +2,7 @@
   <div>
     <Send/>
     <Reception/>
+    <el-button type="primary" @click="handleRemove">移除</el-button>
   </div>
 </template>
 <script>
@@ -16,5 +17,10 @@ export default {
   data() {
     return {}
   },
+  methods: {
+    handleRemove() {
+      this.$bus.$remove('foo')
+    }
+  }
 }
 </script>

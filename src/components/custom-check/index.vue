@@ -18,7 +18,7 @@ export default {
   //   event: 'handleChange'
   // },
   props: {
-    value: String,
+    value: [String, Boolean],
     isSelect: {
       type: [Boolean, String, Number],
       default: false
