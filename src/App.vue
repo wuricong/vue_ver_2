@@ -10,12 +10,13 @@
     <el-button type="primary" @click="handleFormDialog">打开表单组件弹窗</el-button>
     <form-dialog @change="handleChange" v-model="formValue" :visible.sync="formVisible"/>
     <!-- 自定义输入框组件-->
-    <customCheck @getValue="getValue" v-model="isSelect"/>
+    <customCheck :isSelect="isSelect" @getValue="getValue" v-model="isSelect"/>
     <anchored-heading level="2">
       <div>111</div>
     </anchored-heading>
     <EventBus/>
     <JsxTest/>
+    <div>{{ ob.c }}</div>
   </div>
 </template>
 
@@ -34,7 +35,10 @@ export default {
     return {
       formVisible: false,
       formValue: false,
-      isSelect: true
+      isSelect: true,
+      ob: {
+        c: 1
+      }
     }
   },
   components: {
@@ -43,10 +47,14 @@ export default {
     EventBus,
     JsxTest
   },
+  mounted() {
+    console.log('this.ob', this.ob,)
+    console.log('this.data', this.data)
+  },
   methods: {
     async handleAsyncDialog() {
       try {
-        const res = await createAsyncDialog(ApolloExample)
+        const res = await createAsyncDialog(AsyncDialog)
         console.log('AsyncDialog', AsyncDialog)
       } catch (e) {
         console.log('e', e)

@@ -6,6 +6,7 @@ import AsyncDialog from '@/components/async-dialog/index.vue'
  * */
 export default function createAsyncDialog(c) {
   return new Promise((resolve, reject) => {
+    //返回的是一个函数
     const newInstance = Vue.extend(c)
     const com = new newInstance()
 

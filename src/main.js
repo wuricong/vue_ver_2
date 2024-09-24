@@ -16,7 +16,12 @@ setTimeout(() => {
 Vue.use(JsppUI)
 Vue.use(ElementUI)
 Vue.prototype.$bus = new Bus()
+console.log('app', App)
 new Vue({
   router,
-  render: (h) => h(App)
+  render: (h) => {
+    const app = h(App)
+    console.log('app', app)
+    return app
+  }
 }).$mount('#app')

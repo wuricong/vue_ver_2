@@ -1,5 +1,6 @@
 const {defineConfig} = require('@vue/cli-service')
 const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+//defineConfig :获取类型提示
 module.exports = defineConfig({
   transpileDependencies: true,
 
