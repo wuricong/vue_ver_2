@@ -15,13 +15,12 @@
       <div>111</div>
     </anchored-heading>
     <EventBus/>
-    <JsxTest/>
+    <JsxTest data="1"/>
     <div>{{ ob.c }}</div>
   </div>
 </template>
 
 <script>
-import ApolloExample from './components/ApolloExample.vue'
 import AsyncDialog from "@/components/async-dialog/index.vue";
 import createAsyncDialog from "@/utils/creatAsyncDialog";
 import formDialog from '@/components/form-dialog/index.vue'

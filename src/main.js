@@ -9,7 +9,7 @@ import Test from './view/test/index.vue'
 import {Bus} from '@/utils/Bus'
 
 Vue.config.productionTip = false //关闭开发模式下的环境提示
-console.log('1111', process.env.BASE_URL, process.env)
+console.log('1111', process.env)
 setTimeout(() => {
   console.log('Test', Test)
 })
