@@ -1,3 +1,8 @@
+<!-- 当自定义 render 函数中有 template 模版时 会优先渲染template 模板 从而忽略渲染函数  -->
+
+<!--<template>-->
+<!--  <div>jsx-test</div>-->
+<!--</template>-->
 <script>
 export default {
   name: 'jsx-component',
@@ -16,12 +21,13 @@ export default {
     }
   },
   render(h) {
-    console.log('this1111', this)
     return (
         <div>
           <div>我是jsx{this.text}</div>
-          <button onClick={() => this.changeNum.call(this)}>改变状态</button>
-          <el-input v-model={this.inputValue}/>
+          <el-button style="margin-bottom:6px" type="primary" size="small"
+                     onClick={() => this.changeNum.call(this)}>改变状态
+          </el-button>
+          <el-input size="small" v-model={this.inputValue}/>
         </div>
     )
   }
