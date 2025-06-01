@@ -29,7 +29,7 @@ export default {
     }
   },
   created() {
-    console.log('this', this, this.value,)
+    console.log('this11111111', this, this.value,)
   },
   watch: {
     show(val) {

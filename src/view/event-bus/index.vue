@@ -2,7 +2,7 @@
   <div>
     <Send/>
     <Reception/>
-    <el-button type="primary" @click="handleRemove">移除</el-button>
+    <el-button size="mini" type="primary" @click="handleRemove">移除</el-button>
   </div>
 </template>
 <script>

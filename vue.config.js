@@ -1,5 +1,7 @@
 const {defineConfig} = require('@vue/cli-service')
 const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const path = require('path');
+console.log('path', __dirname)
 //defineConfig :获取类型提示
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -25,6 +27,11 @@ module.exports = defineConfig({
   },
 
   configureWebpack: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src/')
+      }
+    },
     plugins: [
       new BundleAnalyzer({
         analyzerMode: process.env.VUE_APP_STAGE === 'LOCAL' ? 'disabled' : 'server', // 本地环境不启用

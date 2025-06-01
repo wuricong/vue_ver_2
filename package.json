@@ -57,6 +57,9 @@
     "env": {
       "node": true
     },
+    "globals": {
+      "chrome": "readonly"
+    },
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended",

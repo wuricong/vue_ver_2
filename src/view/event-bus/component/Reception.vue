@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button type="primary" @click="handleReception">接收</el-button>
+    <el-button size="mini" type="primary" @click="handleReception">接收</el-button>
   </div>
 </template>
 <script>

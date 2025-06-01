@@ -1,0 +1,16 @@
+{
+  "name": "Tsuki",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "manifest_version": 3,
+  "permissions": [
+    "bookmarks",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "popup.js"
+  },
+  "action": {
+  }
+}
