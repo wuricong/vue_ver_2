@@ -29,7 +29,7 @@ module.exports = defineConfig({
   configureWebpack: {
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src/')
+        '@': path.resolve(__dirname, 'src/'),
       }
     },
     plugins: [
@@ -39,5 +39,8 @@ module.exports = defineConfig({
         // analyzerPort: 9999 // 报告页面端口
       }),
     ],
+    optimization:{
+      minimize:false
+    }
   },
 })

@@ -12,6 +12,7 @@ import {Bus} from '@/utils/Bus'
 import '@/styles/index.scss'
 
 Vue.config.productionTip = false //关闭开发模式下的环境提示
+
 //获取环境变量
 console.log('process.env', process.env)
 setTimeout(() => {
@@ -25,7 +26,7 @@ new Vue({
   store,
   render: (h) => {
     const app = h(App)
-    console.log('app', app)
+    console.log('app', App,h)
     return app
   }
 }).$mount('#app')

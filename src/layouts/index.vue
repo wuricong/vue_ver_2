@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex">
     <el-menu>
       <el-menu-item @click="handleClick(menu)" v-for="menu in menuList" :key="menu.id">
         {{ menu.title }}
