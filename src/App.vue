@@ -1,24 +1,24 @@
 <template>
-
-  <router-view></router-view>
+    <router-view></router-view>
 </template>
-
 <script>
-import AsyncDialog from "@/components/async-dialog/index.vue";
-import createAsyncDialog from "@/utils/creatAsyncDialog";
-import axios from "axios";
-import {mapState} from "vuex";
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
   data() {
     return {
-      tableData:[{name:'张三',age:2},{name:'张三1',age:2},{name:'张三2',age:2},{name:'张三3',age:2}],
+      tableData: [
+        { name: '张三', age: 2 },
+        { name: '张三1', age: 2 },
+        { name: '张三2', age: 2 },
+        { name: '张三3', age: 2 },
+      ],
       formVisible: false,
       formValue: false,
       isSelect: true,
       ob: {
-        c: 1
+        c: 1,
       },
       num1: 1,
       num2: 2,
@@ -26,7 +26,7 @@ export default {
     }
   },
   created() {
-    console.log('this',this)
+    console.log('this', this)
     //获取浏览器书签数据
     // chrome.bookmarks.getTree((bookmarks) => {
     //   console.log('bookmarks', bookmarks)
@@ -34,16 +34,16 @@ export default {
   },
   computed: {
     ...mapState({
-      info: state => state.num
+      info: (state) => state.num,
     }),
-    calcCount:{
-      get(){
+    calcCount: {
+      get() {
         return this.num1 + this.num2
       },
-      set(val){
-        console.log('val',val)
-      }
-    }
+      set(val) {
+        console.log('val', val)
+      },
+    },
   },
 }
 </script>
@@ -57,5 +57,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
 </style>

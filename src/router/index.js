@@ -7,7 +7,10 @@ export const routes = [
   {
     path: '/',
     component: () => import('@/layouts/index.vue'),
-    children: [{ path: 'home', component: () => import('@/view/home/index.vue') }],
+    children: [
+      { path: 'home', component: () => import('@/view/home/index.vue') },
+      { path: 'other', component: () => import('@/view/other/index.vue') },
+    ],
   },
   { path: '/router', name: '路由' },
   {
